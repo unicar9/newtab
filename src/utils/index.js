@@ -31,3 +31,16 @@ export const pureWords = (sentense = '') => {
   const regex = /[\u3002|\uff0c|\u3001|\uff1f|\uff01]/gi
   return sentense.replace(regex, ' ')
 }
+
+export const cleanIdioms = (idiom = '') => {
+  const regex = /[\u201D]/gi
+  return idiom.replace(regex, '')
+}
+
+export const cleanExample = (example = '', word = '') => {
+  if (example === '无') {
+    return ''
+  } else {
+    return example.replace('～', word)
+  }
+}
